@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to TextRecognitionDataGenerator's documentation!
+TextRecognitionDataGenerator's documentation
 ========================================================
+
+Since the name is quite long, all subsequent refrences will be under the acronym TRDG.
+
+If you are new to the project, start with the tutorial section!
 
 .. toctree::
    :maxdepth: 2
@@ -14,13 +18,3 @@ Welcome to TextRecognitionDataGenerator's documentation!
    overview
    tutorial
    reference/index.rst
-    
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
