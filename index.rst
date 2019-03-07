@@ -12,9 +12,10 @@ If you are new to the project, start with the tutorial section!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    installation
    overview
    tutorial
    reference/index.rst
+
+

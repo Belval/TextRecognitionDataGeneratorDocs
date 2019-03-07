@@ -56,6 +56,18 @@ generated using multiple fonts. Indeed, simply running <code class="docutils lit
 <img alt="10" src="_images/10.jpg" />
 <img alt="11" src="_images/11.jpg" />
 <img alt="12" src="_images/12.jpg" /></p>
+<p>Now maybe 1000 is too many or too few for your usecase. You can add the <code class="docutils literal notranslate"><span class="pre">-c</span></code> argument
+to set how many examples will be generated.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span></code></p>
+<p>As expected, you will find 10 examples in the <code class="docutils literal notranslate"><span class="pre">out/</span></code> directory.</p>
+</div>
+<div class="section" id="generating-chinese-data">
+<h2>Generating Chinese data<a class="headerlink" href="#generating-chinese-data" title="Permalink to this headline">¶</a></h2>
+<p>This is a common usecase, and one that is easy with TRDG.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-l</span> <span class="pre">cn</span></code></p>
+<p>This will generate 10 samples, using the Chinese dictionary that can be found in
+in <code class="docutils literal notranslate"><span class="pre">dicts/cn.txt</span></code>. Since Asian scripts can be written top to bottom, you might want to
+add the <code class="docutils literal notranslate"><span class="pre">-or</span> <span class="pre">1</span></code> argument to get vertical text.</p>
 </div>
 </div>
 
@@ -76,12 +88,12 @@ generated using multiple fonts. Indeed, simply running <code class="docutils lit
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#just-generating-data">Just generating data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-chinese-data">Generating Chinese data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
@@ -124,7 +136,7 @@ generated using multiple fonts. Indeed, simply running <code class="docutils lit
       &copy;2019, Edouard Belval.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
