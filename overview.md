@@ -26,6 +26,11 @@
     ship with a multi-core CPU. Setting this to `-t 8` makes TRDG create 8 processes
     to generate the data.
 
+5. `-f`, `--format`
+
+    By default, all generated images will be 32 pixels high (or wide if you use `-or 1`).
+    Now that might be too small for you. `-f` allows you to make bigger images.
+
 ## Getting help
 
 As with most CLI tools, TRDG's help is accessible through the `-h` argument.

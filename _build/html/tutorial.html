@@ -65,9 +65,91 @@ to set how many examples will be generated.</p>
 <h2>Generating Chinese data<a class="headerlink" href="#generating-chinese-data" title="Permalink to this headline">¶</a></h2>
 <p>This is a common usecase, and one that is easy with TRDG.</p>
 <p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-l</span> <span class="pre">cn</span></code></p>
-<p>This will generate 10 samples, using the Chinese dictionary that can be found in
-in <code class="docutils literal notranslate"><span class="pre">dicts/cn.txt</span></code>. Since Asian scripts can be written top to bottom, you might want to
+<p>This will generate 10 samples using the Chinese dictionary that can be found in
+in <code class="docutils literal notranslate"><span class="pre">dicts/cn.txt</span></code>:</p>
+<p><img alt="1" src="_images/13.jpg" />
+<img alt="2" src="_images/21.jpg" />
+<img alt="3" src="_images/31.jpg" />
+<img alt="4" src="_images/41.jpg" />
+<img alt="5" src="_images/51.jpg" />
+<img alt="6" src="_images/61.jpg" />
+<img alt="7" src="_images/71.jpg" />
+<img alt="8" src="_images/81.jpg" />
+<img alt="9" src="_images/91.jpg" />
+<img alt="10" src="_images/101.jpg" /></p>
+<p>Since the concept of word in Chinese is a bit trickier, the dictionary is made of single
+characters (make your own!). Let’s do this again with <code class="docutils literal notranslate"><span class="pre">-w</span> <span class="pre">5</span></code> to get something prettier.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-l</span> <span class="pre">cn</span> <span class="pre">-w</span> <span class="pre">5</span></code></p>
+<p><img alt="1" src="_images/14.jpg" />
+<img alt="2" src="_images/22.jpg" />
+<img alt="3" src="_images/32.jpg" />
+<img alt="4" src="_images/42.jpg" />
+<img alt="5" src="_images/52.jpg" />
+<img alt="6" src="_images/62.jpg" />
+<img alt="7" src="_images/72.jpg" />
+<img alt="8" src="_images/82.jpg" />
+<img alt="9" src="_images/92.jpg" />
+<img alt="10" src="_images/102.jpg" /></p>
+<p>Now that looks better, but what’s up with the spacing between the characters? We would rather
+have no spaces. Add <code class="docutils literal notranslate"><span class="pre">-sw</span> <span class="pre">0</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-l</span> <span class="pre">cn</span> <span class="pre">-w</span> <span class="pre">5</span> <span class="pre">-sw</span> <span class="pre">0</span></code></p>
+<p><img alt="1" src="_images/15.jpg" />
+<img alt="2" src="_images/23.jpg" />
+<img alt="3" src="_images/33.jpg" />
+<img alt="4" src="_images/43.jpg" />
+<img alt="5" src="_images/53.jpg" />
+<img alt="6" src="_images/63.jpg" />
+<img alt="7" src="_images/73.jpg" />
+<img alt="8" src="_images/83.jpg" />
+<img alt="9" src="_images/93.jpg" />
+<img alt="10" src="_images/103.jpg" /></p>
+<p>Asian scripts can be written top to bottom, you might want to
 add the <code class="docutils literal notranslate"><span class="pre">-or</span> <span class="pre">1</span></code> argument to get vertical text.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-l</span> <span class="pre">cn</span> <span class="pre">-w</span> <span class="pre">5</span> <span class="pre">-sw</span> <span class="pre">0</span> <span class="pre">-or</span> <span class="pre">1</span></code></p>
+<p><img alt="1" src="_images/16.jpg" />
+<img alt="2" src="_images/24.jpg" />
+<img alt="3" src="_images/34.jpg" />
+<img alt="4" src="_images/44.jpg" />
+<img alt="5" src="_images/54.jpg" />
+<img alt="6" src="_images/64.jpg" />
+<img alt="7" src="_images/74.jpg" />
+<img alt="8" src="_images/84.jpg" />
+<img alt="9" src="_images/94.jpg" />
+<img alt="10" src="_images/104.jpg" /></p>
+<p>You can do much and more with TRDG, if you run into a missing feature, simply <a class="reference external" href="https://github.com/Belval/TextRecognitionDataGenerator/issues/new">open an issue</a>.</p>
+</div>
+<div class="section" id="a-more-advanced-use-case">
+<h2>A more advanced use case<a class="headerlink" href="#a-more-advanced-use-case" title="Permalink to this headline">¶</a></h2>
+<p>Text in the real world is not always black, and most importantly, text in the real
+world is almost never straight. What if we want to emulate that?</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-k</span> <span class="pre">15</span> <span class="pre">-rk</span> <span class="pre">-bl</span> <span class="pre">0.5</span> <span class="pre">-rbl</span> <span class="pre">-tc</span> <span class="pre">'#000000,#888888'</span></code></p>
+<p>Which can be translated to: generate 10 examples with a skewing angle between -15 and
+15 with an added gaussian blur between 0 and 0.1. Finally, the text color should be picked randomly
+between black and gray (including all the colors inbetween).</p>
+<p>Sure enough, the output is much more colourful!</p>
+<p><img alt="1" src="_images/17.jpg" />
+<img alt="2" src="_images/25.jpg" />
+<img alt="3" src="_images/35.jpg" />
+<img alt="4" src="_images/45.jpg" />
+<img alt="5" src="_images/55.jpg" />
+<img alt="6" src="_images/65.jpg" />
+<img alt="7" src="_images/75.jpg" />
+<img alt="8" src="_images/85.jpg" />
+<img alt="9" src="_images/95.jpg" />
+<img alt="10" src="_images/105.jpg" /></p>
+<p>The resolution  might be too small to your taste (and I agree). By default the output is 32 pixels high
+because it’s the height used by most text recognition papers. Now you can change that with <code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">64</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-k</span> <span class="pre">15</span> <span class="pre">-rk</span> <span class="pre">-bl</span> <span class="pre">0.5</span> <span class="pre">-rbl</span> <span class="pre">-tc</span> <span class="pre">'#000000,#888888'</span> <span class="pre">-f</span> <span class="pre">64</span></code></p>
+<p><img alt="1" src="_images/18.jpg" />
+<img alt="2" src="_images/26.jpg" />
+<img alt="3" src="_images/36.jpg" />
+<img alt="4" src="_images/46.jpg" />
+<img alt="5" src="_images/56.jpg" />
+<img alt="6" src="_images/66.jpg" />
+<img alt="7" src="_images/76.jpg" />
+<img alt="8" src="_images/86.jpg" />
+<img alt="9" src="_images/96.jpg" />
+<img alt="10" src="_images/106.jpg" /></p>
 </div>
 </div>
 
@@ -94,6 +176,7 @@ add the <code class="docutils literal notranslate"><span class="pre">-or</span> 
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#just-generating-data">Just generating data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generating-chinese-data">Generating Chinese data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-more-advanced-use-case">A more advanced use case</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
@@ -136,7 +219,7 @@ add the <code class="docutils literal notranslate"><span class="pre">-or</span> 
       &copy;2019, Edouard Belval.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
