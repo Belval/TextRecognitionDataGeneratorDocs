@@ -118,6 +118,35 @@ add the <code class="docutils literal notranslate"><span class="pre">-or</span> 
 <img alt="10" src="_images/104.jpg" /></p>
 <p>You can do much and more with TRDG, if you run into a missing feature, simply <a class="reference external" href="https://github.com/Belval/TextRecognitionDataGenerator/issues/new">open an issue</a>.</p>
 </div>
+<div class="section" id="text-distorsions">
+<h2>Text distorsions<a class="headerlink" href="#text-distorsions" title="Permalink to this headline">¶</a></h2>
+<p>For those familiar with the process of training a machine learning model, you often have to deal with overfitting, which is
+when the model gets too good at predicting the samples in the training data and stops generalizing to unseen examples. One trick
+to prevent this is by adding the distorsion to the data.</p>
+<p>While TRDG does not dwelve too deeply in augmentations, as many better and more complete <a class="reference external" href="https://github.com/search?q=image+augmentation">libraries</a>
+already take care of it, some operations are available for convenience through the <code class="docutils literal notranslate"><span class="pre">-d</span></code> argument which as 3 possible values:</p>
+<ul class="simple">
+<li>0: None</li>
+<li>1: Sine wave</li>
+<li>2: Cosine wave</li>
+<li>3: Random</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">5</span> <span class="pre">-w</span> <span class="pre">5</span> <span class="pre">-d</span> <span class="pre">1</span></code></p>
+<p><img alt="1" src="_images/17.jpg" />
+<img alt="2" src="_images/25.jpg" />
+<img alt="3" src="_images/35.jpg" />
+<img alt="4" src="_images/45.jpg" />
+<img alt="5" src="_images/55.jpg" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">5</span> <span class="pre">-w</span> <span class="pre">5</span> <span class="pre">-d</span> <span class="pre">3</span></code></p>
+<p><img alt="1" src="_images/18.jpg" />
+<img alt="2" src="_images/26.jpg" />
+<img alt="3" src="_images/36.jpg" />
+<img alt="4" src="_images/46.jpg" />
+<img alt="5" src="_images/56.jpg" /></p>
+</div>
+<div class="section" id="picture-background">
+<h2>Picture background<a class="headerlink" href="#picture-background" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="a-more-advanced-use-case">
 <h2>A more advanced use case<a class="headerlink" href="#a-more-advanced-use-case" title="Permalink to this headline">¶</a></h2>
 <p>Text in the real world is not always black, and most importantly, text in the real
@@ -127,24 +156,24 @@ world is almost never straight. What if we want to emulate that?</p>
 15 with an added gaussian blur between 0 and 0.1. Finally, the text color should be picked randomly
 between black and gray (including all the colors inbetween).</p>
 <p>Sure enough, the output is much more colourful!</p>
-<p><img alt="1" src="_images/17.jpg" />
-<img alt="2" src="_images/25.jpg" />
-<img alt="3" src="_images/35.jpg" />
-<img alt="4" src="_images/45.jpg" />
-<img alt="5" src="_images/55.jpg" />
+<p><img alt="1" src="_images/19.jpg" />
+<img alt="2" src="_images/27.jpg" />
+<img alt="3" src="_images/37.jpg" />
+<img alt="4" src="_images/47.jpg" />
+<img alt="5" src="_images/57.jpg" />
 <img alt="6" src="_images/65.jpg" />
 <img alt="7" src="_images/75.jpg" />
 <img alt="8" src="_images/85.jpg" />
 <img alt="9" src="_images/95.jpg" />
 <img alt="10" src="_images/105.jpg" /></p>
-<p>The resolution  might be too small to your taste (and I agree). By default the output is 32 pixels high
+<p>The default resolution might be too small to your taste (and I agree). By default the output is 32 pixels high
 because it’s the height used by most text recognition papers. Now you can change that with <code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">64</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">10</span> <span class="pre">-k</span> <span class="pre">15</span> <span class="pre">-rk</span> <span class="pre">-bl</span> <span class="pre">0.5</span> <span class="pre">-rbl</span> <span class="pre">-tc</span> <span class="pre">'#000000,#888888'</span> <span class="pre">-f</span> <span class="pre">64</span></code></p>
-<p><img alt="1" src="_images/18.jpg" />
-<img alt="2" src="_images/26.jpg" />
-<img alt="3" src="_images/36.jpg" />
-<img alt="4" src="_images/46.jpg" />
-<img alt="5" src="_images/56.jpg" />
+<p><img alt="1" src="_images/110.jpg" />
+<img alt="2" src="_images/28.jpg" />
+<img alt="3" src="_images/38.jpg" />
+<img alt="4" src="_images/48.jpg" />
+<img alt="5" src="_images/58.jpg" />
 <img alt="6" src="_images/66.jpg" />
 <img alt="7" src="_images/76.jpg" />
 <img alt="8" src="_images/86.jpg" />
@@ -176,6 +205,8 @@ because it’s the height used by most text recognition papers. Now you can chan
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#just-generating-data">Just generating data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generating-chinese-data">Generating Chinese data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-distorsions">Text distorsions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#picture-background">Picture background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#a-more-advanced-use-case">A more advanced use case</a></li>
 </ul>
 </li>

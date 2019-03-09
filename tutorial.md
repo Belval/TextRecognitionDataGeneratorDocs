@@ -101,6 +101,36 @@ add the `-or 1` argument to get vertical text.
 
 You can do much and more with TRDG, if you run into a missing feature, simply [open an issue](https://github.com/Belval/TextRecognitionDataGenerator/issues/new).
 
+## Text distorsions
+
+For those familiar with the process of training a machine learning model, you often have to deal with overfitting, which is
+when the model gets too good at predicting the samples in the training data and stops generalizing to unseen examples. One trick
+to prevent this is by adding the distorsion to the data.
+
+While TRDG does not dwelve too deeply in augmentations, as many better and more complete [libraries](https://github.com/search?q=image+augmentation)
+already take care of it, some operations are available for convenience through the `-d` argument which as 3 possible values:
+
+- 0: None
+- 1: Sine wave
+- 2: Cosine wave
+- 3: Random
+
+`python3 run.py -c 5 -w 5 -d 1`
+
+![](_static/images/tutorial/8/1.jpg "1")
+![](_static/images/tutorial/8/2.jpg "2")
+![](_static/images/tutorial/8/3.jpg "3")
+![](_static/images/tutorial/8/4.jpg "4")
+![](_static/images/tutorial/8/5.jpg "5")
+
+`python3 run.py -c 5 -w 5 -d 3`
+
+![](_static/images/tutorial/9/1.jpg "1")
+![](_static/images/tutorial/9/2.jpg "2")
+![](_static/images/tutorial/9/3.jpg "3")
+![](_static/images/tutorial/9/4.jpg "4")
+![](_static/images/tutorial/9/5.jpg "5")
+
 ## A more advanced use case
 
 Text in the real world is not always black, and most importantly, text in the real
@@ -125,7 +155,7 @@ Sure enough, the output is much more colourful!
 ![](_static/images/tutorial/6/9.jpg "9")
 ![](_static/images/tutorial/6/10.jpg "10")
 
-The resolution  might be too small to your taste (and I agree). By default the output is 32 pixels high
+The default resolution might be too small to your taste (and I agree). By default the output is 32 pixels high
 because it's the height used by most text recognition papers. Now you can change that with `-f 64`.
 
 `python3 run.py -c 10 -k 15 -rk -bl 0.5 -rbl -tc '#000000,#888888' -f 64`
@@ -140,5 +170,3 @@ because it's the height used by most text recognition papers. Now you can change
 ![](_static/images/tutorial/7/8.jpg "8")
 ![](_static/images/tutorial/7/9.jpg "9")
 ![](_static/images/tutorial/7/10.jpg "10")
-
-
