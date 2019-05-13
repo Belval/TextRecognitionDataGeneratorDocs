@@ -131,10 +131,6 @@ already take care of it, some operations are available for convenience through t
 ![](_static/images/tutorial/9/4.jpg "4")
 ![](_static/images/tutorial/9/5.jpg "5")
 
-## Picture background
-
-
-
 ## A more advanced use case
 
 Text in the real world is not always black, and most importantly, text in the real
@@ -174,3 +170,31 @@ because it's the height used by most text recognition papers. Now you can change
 ![](_static/images/tutorial/7/8.jpg "8")
 ![](_static/images/tutorial/7/9.jpg "9")
 ![](_static/images/tutorial/7/10.jpg "10")
+
+## Manipulating margins
+
+TRDG allows you to control margins around the text using two parameters, `--margins`, `--fit`. The first one controls margins, in pretty much the same way the CSS property `margin` does.
+
+This is the result with no fit and the default (5, 5, 5, 5) margins: `python3 run.py -c 1 -i texts/test.txt`
+
+![](_static/images/tutorial/10/1.jpg "1")
+
+Now we can add `--fit` to apply a tight crop around the rendered text. This changes the size by removing the added space for accents: `python3 run.py -c 1  -i texts/test.txt --fit`
+
+![](_static/images/tutorial/10/2.jpg "2")
+
+Margins are applied the generated text, so even with `0,0,0,0`, if you don't use `--fit` you will get an apparence of margins: `python3 run.py -c 1 -i texts/test.txt --margins 0,0,0,0` 
+
+![](_static/images/tutorial/10/3.jpg "3")
+
+Now if you add `--fit`, you get an absolutely no margins: `python3 run.py -c 1 -i texts/test.txt --margins 0,0,0,0 --fit`
+
+![](_static/images/tutorial/10/4.jpg "4")
+
+Margin values are comma separated `top,left,bottom,right`, so `--margins 10,0,10,0` will return vertical margins with tight cropping vertically.
+
+![](_static/images/tutorial/10/5.jpg "5")
+
+And finally, with all margins: `python3 run.py -c 1 -i texts/test.txt --margins 10,10,10,10 --fit`
+
+![](_static/images/tutorial/10/6.jpg "6")

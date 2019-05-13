@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Tutorial &#8212; TextRecognitionDataGenerator latest documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -126,10 +124,10 @@ to prevent this is by adding the distorsion to the data.</p>
 <p>While TRDG does not dwelve too deeply in augmentations, as many better and more complete <a class="reference external" href="https://github.com/search?q=image+augmentation">libraries</a>
 already take care of it, some operations are available for convenience through the <code class="docutils literal notranslate"><span class="pre">-d</span></code> argument which as 3 possible values:</p>
 <ul class="simple">
-<li>0: None</li>
-<li>1: Sine wave</li>
-<li>2: Cosine wave</li>
-<li>3: Random</li>
+<li><p>0: None</p></li>
+<li><p>1: Sine wave</p></li>
+<li><p>2: Cosine wave</p></li>
+<li><p>3: Random</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">5</span> <span class="pre">-w</span> <span class="pre">5</span> <span class="pre">-d</span> <span class="pre">1</span></code></p>
 <p><img alt="1" src="_images/17.jpg" />
@@ -143,9 +141,6 @@ already take care of it, some operations are available for convenience through t
 <img alt="3" src="_images/36.jpg" />
 <img alt="4" src="_images/46.jpg" />
 <img alt="5" src="_images/56.jpg" /></p>
-</div>
-<div class="section" id="picture-background">
-<h2>Picture background<a class="headerlink" href="#picture-background" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="a-more-advanced-use-case">
 <h2>A more advanced use case<a class="headerlink" href="#a-more-advanced-use-case" title="Permalink to this headline">¶</a></h2>
@@ -180,6 +175,22 @@ because it’s the height used by most text recognition papers. Now you can chan
 <img alt="9" src="_images/96.jpg" />
 <img alt="10" src="_images/106.jpg" /></p>
 </div>
+<div class="section" id="manipulating-margins">
+<h2>Manipulating margins<a class="headerlink" href="#manipulating-margins" title="Permalink to this headline">¶</a></h2>
+<p>TRDG allows you to control margins around the text using two parameters, <code class="docutils literal notranslate"><span class="pre">--margins</span></code>, <code class="docutils literal notranslate"><span class="pre">--fit</span></code>. The first one controls margins, in pretty much the same way the CSS property <code class="docutils literal notranslate"><span class="pre">margin</span></code> does.</p>
+<p>This is the result with no fit and the default (5, 5, 5, 5) margins: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">1</span> <span class="pre">-i</span> <span class="pre">texts/test.txt</span></code></p>
+<p><img alt="1" src="_images/111.jpg" /></p>
+<p>Now we can add <code class="docutils literal notranslate"><span class="pre">--fit</span></code> to apply a tight crop around the rendered text. This changes the size by removing the added space for accents: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">1</span>&#160; <span class="pre">-i</span> <span class="pre">texts/test.txt</span> <span class="pre">--fit</span></code></p>
+<p><img alt="2" src="_images/29.jpg" /></p>
+<p>Margins are applied the generated text, so even with <code class="docutils literal notranslate"><span class="pre">0,0,0,0</span></code>, if you don’t use <code class="docutils literal notranslate"><span class="pre">--fit</span></code> you will get an apparence of margins: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">1</span> <span class="pre">-i</span> <span class="pre">texts/test.txt</span> <span class="pre">--margins</span> <span class="pre">0,0,0,0</span></code></p>
+<p><img alt="3" src="_images/39.jpg" /></p>
+<p>Now if you add <code class="docutils literal notranslate"><span class="pre">--fit</span></code>, you get an absolutely no margins: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">1</span> <span class="pre">-i</span> <span class="pre">texts/test.txt</span> <span class="pre">--margins</span> <span class="pre">0,0,0,0</span> <span class="pre">--fit</span></code></p>
+<p><img alt="4" src="_images/49.jpg" /></p>
+<p>Margin values are comma separated <code class="docutils literal notranslate"><span class="pre">top,left,bottom,right</span></code>, so <code class="docutils literal notranslate"><span class="pre">--margins</span> <span class="pre">10,0,10,0</span></code> will return vertical margins with tight cropping vertically.</p>
+<p><img alt="5" src="_images/59.jpg" /></p>
+<p>And finally, with all margins: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">run.py</span> <span class="pre">-c</span> <span class="pre">1</span> <span class="pre">-i</span> <span class="pre">texts/test.txt</span> <span class="pre">--margins</span> <span class="pre">10,10,10,10</span> <span class="pre">--fit</span></code></p>
+<p><img alt="6" src="_images/67.jpg" /></p>
+</div>
 </div>
 
 
@@ -206,8 +217,8 @@ because it’s the height used by most text recognition papers. Now you can chan
 <li class="toctree-l2"><a class="reference internal" href="#just-generating-data">Just generating data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generating-chinese-data">Generating Chinese data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#text-distorsions">Text distorsions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#picture-background">Picture background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#a-more-advanced-use-case">A more advanced use case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manipulating-margins">Manipulating margins</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
@@ -228,8 +239,6 @@ because it’s the height used by most text recognition papers. Now you can chan
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -250,7 +259,7 @@ because it’s the height used by most text recognition papers. Now you can chan
       &copy;2019, Edouard Belval.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

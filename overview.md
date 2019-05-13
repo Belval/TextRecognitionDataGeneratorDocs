@@ -48,7 +48,7 @@ usage: run.py [-h] [--output_dir [OUTPUT_DIR]] [-i [INPUT_FILE]]
               [-rbl] [-b [BACKGROUND]] [-hw] [-na NAME_FORMAT]
               [-d [DISTORSION]] [-do [DISTORSION_ORIENTATION]] [-wd [WIDTH]]
               [-al [ALIGNMENT]] [-or [ORIENTATION]] [-tc [TEXT_COLOR]]
-              [-sw [SPACE_WIDTH]]
+              [-sw [SPACE_WIDTH]] [-m [MARGINS]] [-fi]
 
 Generate synthetic text data for text recognition.
 
@@ -137,4 +137,8 @@ optional arguments:
   -sw [SPACE_WIDTH], --space_width [SPACE_WIDTH]
                         Define the width of the spaces between words. 2.0
                         means twice the normal space width
+  -m [MARGINS], --margins [MARGINS]
+                        Define the margins around the text when rendered. In
+                        pixels
+  -fi, --fit            Apply a tight crop around the rendered text
 ```
