@@ -41,14 +41,14 @@ in the reference. If even that does not do, feel free to
 on the official repository.
 
 ```
-usage: run.py [-h] [--output_dir [OUTPUT_DIR]] [-i [INPUT_FILE]]
-              [-l [LANGUAGE]] [-c [COUNT]] [-rs] [-let] [-num] [-sym]
-              [-w [LENGTH]] [-r] [-f [FORMAT]] [-t [THREAD_COUNT]]
-              [-e [EXTENSION]] [-k [SKEW_ANGLE]] [-rk] [-wk] [-bl [BLUR]]
-              [-rbl] [-b [BACKGROUND]] [-hw] [-na NAME_FORMAT]
-              [-d [DISTORSION]] [-do [DISTORSION_ORIENTATION]] [-wd [WIDTH]]
-              [-al [ALIGNMENT]] [-or [ORIENTATION]] [-tc [TEXT_COLOR]]
-              [-sw [SPACE_WIDTH]] [-m [MARGINS]] [-fi]
+usage: trdg [-h] [--output_dir [OUTPUT_DIR]] [-i [INPUT_FILE]] [-l [LANGUAGE]]
+            -c [COUNT] [-rs] [-let] [-num] [-sym] [-w [LENGTH]] [-r]
+            [-f [FORMAT]] [-t [THREAD_COUNT]] [-e [EXTENSION]]
+            [-k [SKEW_ANGLE]] [-rk] [-wk] [-bl [BLUR]] [-rbl]
+            [-b [BACKGROUND]] [-hw] [-na NAME_FORMAT] [-d [DISTORSION]]
+            [-do [DISTORSION_ORIENTATION]] [-wd [WIDTH]] [-al [ALIGNMENT]]
+            [-or [ORIENTATION]] [-tc [TEXT_COLOR]] [-sw [SPACE_WIDTH]]
+            [-m [MARGINS]] [-fi] [-ft [FONT]] [-ca [CASE]]
 
 Generate synthetic text data for text recognition.
 
@@ -141,4 +141,9 @@ optional arguments:
                         Define the margins around the text when rendered. In
                         pixels
   -fi, --fit            Apply a tight crop around the rendered text
+  -ft [FONT], --font [FONT]
+                        Define font to be used
+  -ca [CASE], --case [CASE]
+                        Generate upper or lowercase only. arguments: upper or
+                        lower. Example: --case upper
 ```
