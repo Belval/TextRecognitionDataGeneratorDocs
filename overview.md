@@ -141,4 +141,6 @@ optional arguments:
                         Define the margins around the text when rendered. In
                         pixels
   -fi, --fit            Apply a tight crop around the rendered text
+  -ft [FONT], --font [FONT]
+                        Define font to be used
 ```
