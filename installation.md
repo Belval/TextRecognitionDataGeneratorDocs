@@ -1,6 +1,16 @@
 # Installation
 
-TRDG does not currently possess and official Pypi package. The easiest way
+## Official package
+
+TRDG has a pip package with a matching name.
+
+`pip install trdg`
+
+Once that is installed, the `trdg` binary should be in your PATH.
+
+## From source
+
+If you want to add a new language The easiest way
 to use the tool is by cloning the official repo.
 
 `git clone https://github.com/Belval/TextRecognitionDataGenerator`

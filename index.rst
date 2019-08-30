@@ -16,6 +16,7 @@ If you are new to the project, start with the tutorial section!
    installation
    overview
    tutorial
+   module
    reference/index.rst
 
 
