@@ -11,7 +11,7 @@ for img in generator:
     # Do something with the pillow image here.
 ```
 
-The basic one is `GeneratorFromStrings` which, as its name indicates, will take a list of strings, and generate an image.
+The basic one is `GeneratorFromStrings` which, as its name indicates, will take a list of strings, and generate an image and label pair.
 
 If you want to avoid having to maintain dictionaries, you can use `GeneratorFromDicts` which will use the bundled ones, `GeneratorFromRandom` which generates random strings, and `GeneratorFromWikipedia` which picks random article from Wikipedia as its source for strings.
 
@@ -28,7 +28,7 @@ generator_from_dicts = GeneratorFromDicts()
 generator_from_random = GeneratorFromRandom()
 generator_from_wikipedia = GeneratorFromWikipedia()
 
-for img in generator_from_dicts:
+for img, lbl in generator_from_dicts:
     # Do something with the pillow image here.
 ```
 
