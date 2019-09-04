@@ -3,7 +3,7 @@
 TRDG is also a module that can be included in your favorite training pipeline. The easiest way to use it, is to import a generator.
 
 ```py
-from TextRecognitionDataGenerator.generators import GeneratorFromStrings
+from trdg.generators import GeneratorFromStrings
 
 generator = GeneratorFromStrings(['Test1', 'Test2', 'Test3'])
 
@@ -18,7 +18,7 @@ If you want to avoid having to maintain dictionaries, you can use `GeneratorFrom
 Here are examples for each of those, respectively:
 
 ```py
-from TextRecognitionDataGenerator.generators import (
+from trdg.generators import (
     GeneratorFromDicts,
     GeneratorFromRandom,
     GeneratorFromWikipedia,
