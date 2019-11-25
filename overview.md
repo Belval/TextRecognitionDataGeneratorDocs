@@ -48,7 +48,8 @@ usage: trdg [-h] [--output_dir [OUTPUT_DIR]] [-i [INPUT_FILE]] [-l [LANGUAGE]]
             [-b [BACKGROUND]] [-hw] [-na NAME_FORMAT] [-d [DISTORSION]]
             [-do [DISTORSION_ORIENTATION]] [-wd [WIDTH]] [-al [ALIGNMENT]]
             [-or [ORIENTATION]] [-tc [TEXT_COLOR]] [-sw [SPACE_WIDTH]]
-            [-m [MARGINS]] [-fi] [-ft [FONT]] [-ca [CASE]]
+            [-cs [CHARACTER_SPACING]] [-m [MARGINS]] [-fi] [-ft [FONT]]
+            [-ca [CASE]]
 
 Generate synthetic text data for text recognition.
 
@@ -137,6 +138,9 @@ optional arguments:
   -sw [SPACE_WIDTH], --space_width [SPACE_WIDTH]
                         Define the width of the spaces between words. 2.0
                         means twice the normal space width
+  -cs [CHARACTER_SPACING], --character_spacing [CHARACTER_SPACING]
+                        Define the width of the spaces between characters. 2
+                        means two pixels
   -m [MARGINS], --margins [MARGINS]
                         Define the margins around the text when rendered. In
                         pixels
