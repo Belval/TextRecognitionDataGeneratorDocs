@@ -20,10 +20,5 @@ environment for those.
 
 `pip3 install -r requirements.txt`
 
-If you want to use the handwritten text generation feature, you need to install
-the `-hw` dependencies.
-
-`pip3 install -r requirements-hw.txt`
-
 Once that is done, you can move to the [tutorial](tutorial.md) for tips and tricks
 on how to use TRDG!

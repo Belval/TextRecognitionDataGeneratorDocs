@@ -45,7 +45,7 @@ usage: trdg [-h] [--output_dir [OUTPUT_DIR]] [-i [INPUT_FILE]] [-l [LANGUAGE]]
             -c [COUNT] [-rs] [-let] [-num] [-sym] [-w [LENGTH]] [-r]
             [-f [FORMAT]] [-t [THREAD_COUNT]] [-e [EXTENSION]]
             [-k [SKEW_ANGLE]] [-rk] [-wk] [-bl [BLUR]] [-rbl]
-            [-b [BACKGROUND]] [-hw] [-na NAME_FORMAT] [-d [DISTORSION]]
+            [-b [BACKGROUND]] [-na NAME_FORMAT] [-d [DISTORSION]]
             [-do [DISTORSION_ORIENTATION]] [-wd [WIDTH]] [-al [ALIGNMENT]]
             [-or [ORIENTATION]] [-tc [TEXT_COLOR]] [-sw [SPACE_WIDTH]]
             [-cs [CHARACTER_SPACING]] [-m [MARGINS]] [-fi] [-ft [FONT]]
@@ -108,7 +108,6 @@ optional arguments:
   -b [BACKGROUND], --background [BACKGROUND]
                         Define what kind of background to use. 0: Gaussian
                         Noise, 1: Plain white, 2: Quasicrystal, 3: Pictures
-  -hw, --handwritten    Define if the data will be "handwritten" by an RNN
   -na NAME_FORMAT, --name_format NAME_FORMAT
                         Define how the produced files will be named. 0:
                         [TEXT]_[ID].[EXT], 1: [ID]_[TEXT].[EXT] 2: [ID].[EXT]
