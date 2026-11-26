@@ -41,6 +41,7 @@ release = 'latest'
 extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    'myst_parser',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -50,7 +51,6 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -60,12 +60,12 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README.md']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -176,10 +176,9 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
-from recommonmark.parser import CommonMarkParser
-
-source_parsers = {
-    '.md': CommonMarkParser,
+# Markdown pages are parsed by myst-parser (registered in `extensions`);
+# recommonmark and `source_parsers` are no longer supported by Sphinx.
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
 }
-
-source_suffix = ['.rst', '.md']
