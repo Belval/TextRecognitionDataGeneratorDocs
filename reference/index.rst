@@ -10,6 +10,5 @@ Coming soon
    backgroundgenerator
    computertextgenerator
    distorsiongenerator
-   handwrittentextgenerator
    stringgenerator
     
